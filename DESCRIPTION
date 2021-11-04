@@ -1,16 +1,21 @@
 Package: turnaround
-Title: What the Package Does (One Line, Title Case)
+Title: Research Compendium For Beltran et al. (In Prep)
 Version: 0.0.0.9000
-Authors@R:
-    person("Max", "Czapanskiy", , "maxczap@stanford.edu", role = c("aut", "cre"),
-           comment = c("ORCID-ID" = "0000-0002-6302-905X"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Roxanne", "Beltran", role = "aut",
+           comment = c("ORCID-ID" = "0000-0002-8520-1105")),
+    person("Alexander", "Yuen", role = "aut"),
+    person("Richard", "Condit", role = "aut"),
+    person("Patrick", "Robinson", role = "aut",
+           comment = c("ORCID-ID" = "0000-0003-3957-8347")),
+    person("Max", "Czapanskiy", , "maxczapanskiy@gmail.com", role = c("aut", "cre"),
+           comment = c("ORCID-ID" = "0000-0002-6302-905X")),
+    person("Daniel", "Crocker", role = "aut"),
+    person("Daniel", "Costa", role = "aut")
+  )
+Description: Code, data, and manuscript for Beltran et al. (in prep) to
+    facilitate open and reproducible science.
 License: MIT + file LICENSE
-ByteCompile: true
-Encoding: UTF-8
-LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
 Imports: 
     bookdown,
     cowplot,
@@ -22,5 +27,11 @@ Imports:
     magick,
     mapdata,
     viridis
-Suggests: devtools,
+Suggests: 
+    devtools,
     git2r
+ByteCompile: true
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
