@@ -1,0 +1,112 @@
+---
+title: "Evidence of a map sense: elephant seals account for time and space during long-distance migrations"
+author:
+  - Roxanne Beltran:
+      email: roxanne@ucsc.edu
+      institute: [UCSC]
+      correspondence: true
+  - Alexander Yuen:
+      institute: [Unk]
+      correspondence: false
+  - Richard Condit:
+      institute: [Unk]
+      correspondence: false
+  - Patrick W. Robinson:
+      institute: [UCSC]
+      correspondence: false
+  - Max F. Czapanskiy:
+      institute: [HMS]
+      correspondence: false
+  - Daniel E. Crocker:
+      institute: [Unk]
+      correspondence: false
+  - Daniel P. Costa:
+      institute: [UCSC]
+      correspondence: false
+institute:
+  - UCSC: UC Santa Cruz
+  - HMS: Hopkins Marine Station
+  - Unk: Unknown
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+    bookdown::word_document2:
+      fig_caption: yes
+      reference_docx: "../templates/template.docx" # Insert path for the DOCX file
+      pandoc_args:
+      - --lua-filter=../templates/scholarly-metadata.lua
+      - --lua-filter=../templates/author-info-blocks.lua
+      - --lua-filter=../templates/pagebreak.lua
+bibliography: references.bib
+csl: "../templates/current-biology.csl" # Insert path for the bib-style
+abstract: |
+  Text of abstract
+keywords: |
+  keyword 1; keyword 2; keyword 3
+---
+
+<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
+
+<!-- With the following code you can access and display values from the yml header above. -->
+
+Keywords: `r rmarkdown::metadata$keywords`
+
+<!-- The following code chunk defines some general settings how code chunks should behave. -->
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  echo = FALSE,
+  comment = "#>",
+  fig.path = "../figures/",
+  dpi = 300
+)
+```
+
+<!-- The actual document text starts here: -->
+
+Many marine animals migrate between broad foraging areas and geographically restricted reproductive sites, often precisely timing the return migration. In theory, the decision to return should reflect energy acquisition at foraging areas, energetic costs associated with transit, and reaching the reproductive site within a time window appropriate for accessing mates. For this life-history to be succesful, animals mustintegrate "map" information to assess where they are relative to their reproductive site as well as "calendar" information to know when to initiate the return migration given their distance from home [@putman2021]. Elephant seals, *Mirounga angustirostris*, migrate thousands of kilometers from reproductive sites to open ocean foraging areas (Figure 1A) yet return within a narrow window of time to specific beaches [@conditMMS]. Each year, pregnant female elephant seals undertake a \~240-day, 10,000 km foraging migration across the Eastern North Pacific Ocean before returning to their breeding beaches to give birth within 5 days of arriving [@conditMMS]. A first step in understanding their navigational abilities is determining whether they have a map sense (i.e., whether they strategically begin the inbound migration based on how far they need to travel). Using satellite tracking data collected from uniquely identified adult female seals (N=126 tracks from N=108 individuals, 2004-2015), we determined the turnaround date on which each seal started its return migration and moved consistently toward its breeding beach based on daily displacement [@robinson2012] (Figure 1A, Supplemental Figure 1). Turnaround dates depended strongly on distance from the breeding beach but were unrelated to body condition determined by time-depth recorders. Specifically, seals that foraged farther began their inbound migration earlier. These data provide evidence that seals know their distance from the breeding beach and allocate extra time to get back if they have farther to travel. The ability of seals to adjust the timing of their return migration based on the perception of space and time further elucidates the mechanisms behind their astonishing navigational feats [@robinson2012]. It also provides an understanding of how population-level reproductive synchrony is possible for migratory animals.
+
+Elephant seals return to the same beaches each year, with minimal variation in arrival date [@conditMMS]. The fitness consequences of missing a breeding season have strongly selected for consistent migration departure and arrival dates across individuals (Figure 1B). However, this consistency is not a result of group travel or active coordination because seals forage independently. Thus, it is unknown what cue causes female elephant seals to begin their return migration months prior to giving birth at the breeding beach [@conditMMS]. The animals have vast distributions at sea, across longitudes and latitudes with dramatically different celestial cues and daylengths. Yet, they all return to the breeding colony within a narrow window of time [@beltran2021]. Our objective was to determine the intrinsic and extrinsic factors that motivate foraging elephant seals to turn around and begin directed travel back to their breeding beaches. We predicted that the seals that traveled the farthest would initiate their return the earliest. This would provide sufficient time to travel back to the breeding beaches. Alternatively, we hypothesized that seals would initiate their return after they attained sufficient energy stores for the return home and the subsequent reproductive event at the breeding beach. As capital breeders, elephant seals do not feed throughout the lactation period, instead deriving all of the energy and nutritional resources acquired from fat reserves gained during the foraging migration.
+
+Migration departure and arrival dates were calculated based on the seals' arrival and departure from the breeding colony and into the Pacific Ocean using biologging data (Figure 1C) [@robinson2012]. Daily distance from the Año Nuevo breeding beach was calculated for each seal. The first derivative was calculated to assess the change in distance per day (Supplement). The initiation of the return migration was calculated as the last date and location at which the first derivative fell below zero (i.e., the movement was directed toward the breeding beach until the end of the migration). After the migration, each seal was monitored near-daily so the birthdate of the pup could be determined. Using drift rate from time-depth recorders as a proxy for body condition, we identified the date at which each seal's buoyancy switched from negative (e.g., leaner) to positive (e.g., fatter) (Supplemental Material).
+
+Pupping dates were 20 ± 7, meaning that seals began their return migration \~98 days before giving birth (Figure 1B). Seals started their return migrations when they were 2,814 ± 1,129 km from the breeding beach (Figure 1A). There was a weak relationship between turnaround dates and arrival dates at the colony (Figure 1B) due to variation in the distance seals traveled during that time (Figure 1A). Specifically, seals that did not travel as far had later turnaround dates than seals that traveled farther (TurnaroundDate = -0.027 \* TurnaroundDistance -21.91, Figure 1D). A linear mixed-effects model of turnaround date (relative to pupping date) as a function of turnaround distance and buoyancy change date showed that turnaround distance (p \< 0.0001) but not buoyancy change date (p = 0.60) had significant partial effects in the full model. The two-predictor model accounted for 80% of the variance ($R^2_{conditional}$) in turnaround date.
+
+Until now, there has been substantial uncertainty in the when and why of movement decisions made by northern elephant seals, one of the longest distance migrators on the planet [@robinson2012]. We found that elephant seals show a great deal of variability in when and where they begin their multi-week return migration, which facilitates extreme synchrony in arrival dates at the breeding beach across females (Figure 1B). Our results demonstrate that elephant seals initiate their return based on time-mediated distance from the breeding beach. While the sensory basis of elephant seals' ability to assess their position (e.g., geomagnetic, celestial, acoustic, or olfactory) remains unknown, our data suggest that elephant seals have a map sense, which allows them to adjust their movement based on their current position relative to their destination [@putman2020]. This may help explain how elephant seals return to the breeding beach just before giving birth despite a maximum transit speed of \~150 km/day. Despite extensive research into how migratory animals pursue foraging patches in terrestrial [@aikens2017] and marine [@abrahms2019] ecosystems, it is unclear when and why animals decide to leave their foraging patches and return to their breeding grounds. Discovering movement mechanisms in this species can help us better understand life-history trade-offs throughout the annual cycle [@mcnamara2007] and explore parallels with other long-distance migrators, including seabirds and whales, with critical implications for resource management, population connectivity, nutrient flow, species interactions, ecosystem control, and disease dynamics [@lohmann2018; @hussey2015].
+
+![**Figure 1**: During 10,000km roundtrip migrations, elephant seals (inset) schedule their return to the breeding beach based on their distance. (**A**) Turnaround locations for each elephant seal in yellow overlayed onto the full migration tracks (grey lines). The breeding beach at Año Nuevo Reserve is a black square. (**B, C**) Departure and arrival dates are highly constrained across individuals, while turnaround dates are variable. (**D**) There is a strong correspondence between the distance and date at which seals began their return to the breeding beach such that closer seals turned around later. This staggered turnaround allowed for population-level synchrony for the breeding season. (**E**) There was no relationship between the day seals became positively buoyant and the day seals turned around, suggesting that the attainment of sufficient fat stores does not trigger the return to the breeding colony. ](../figures/fig1.png){width="1545" height="2058"}
+
+# Acknowledgements
+
+The authors thank A. Marm Kilpatrick and Bruce Lyon for valuable discussions. This research was completed at the University of California Natural Reserve System's Año Nuevo Reserve. The research was approved by the University of California Santa Cruz Institutional Animal Care and Use Committee \#Costd1709 and the National Marine Fisheries Service marine mammal research permit \#19108. The work was funded by ONR N00014-18-1-2822 (to DPC), the E&P Sound and Marine Life Joint Industry Project of the International Association of Oil and Gas Producers (to DPC), and National Science Foundation award \#2052497 (to RSB and DPC).
+
+<!-- The following line inserts a page break  -->
+
+\newpage
+
+# References
+
+<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+
+::: {#refs}
+:::
+
+\newpage
+
+### Colophon
+
+This report was generated on `r Sys.time()` using the following computational environment and dependencies:
+
+```{r colophon, cache = FALSE}
+# which R packages and versions?
+if ("devtools" %in% installed.packages()) devtools::session_info()
+```
+
+The current Git commit details are:
+
+```{r}
+# what commit is this file at? 
+if ("git2r" %in% installed.packages() & git2r::in_repository(path = ".")) git2r::repository(here::here())  
+```
