@@ -98,6 +98,7 @@ dat_long <- dat %>%
 
 fig1b <- ggplot(dat_long, aes(i, DSP)) +
   geom_segment(aes(xend = i, y = DepartureDSP, yend = ArrivalDSP),
+               size=0.2,
                data = dat) +
   geom_point(aes(fill = phenology), shape = 21) +
   annotate("text", x = 1, y = 50, label = "B", hjust = 0, vjust = 1) +
