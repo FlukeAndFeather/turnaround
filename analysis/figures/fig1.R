@@ -68,20 +68,20 @@ xlim <- c(-190,-121) #find longitude limits of data to inform map
 w <- map_data("worldHires", ylim = ylim, xlim = xlim) #extract map data
 
 #make the plot
-fig1a <- ggplot() +
+(fig1a <- ggplot() +
   geom_path(TLL,mapping=aes(x=Lon,y=Lat,group=TOPPID),colour="grey40",size=.2)+
   geom_point(dat,mapping=aes(x=TurnaroundLon,y=TurnaroundLat),color="black",size=2.3)+
   geom_point(dat,mapping=aes(x=TurnaroundLon,y=TurnaroundLat,color="Turnaround"),size=1.6)+
   geom_polygon(data=w,aes(x=long,y=lat,group=group),fill="grey10")+
   geom_point(dat,mapping=aes(x=-122,y=37.12),color="white",fill="black",pch=22,size=6)+
-  geom_text(x = -191.5, y = 62.5, hjust = 0, vjust = 1, label = "A", size = 2) +
+  annotate("text", x = -191, y = 62.5, hjust = 0, vjust = 1, label = "A", fontface="bold") +
   labs(x = "Longitude (°)",
        y = "Latitude (°)",
        color = "") +
   coord_fixed(1.5, xlim = xlim, ylim = ylim) +
   scale_color_manual(values = "goldenrod") +
   theme_white() +
-  draw_image(logo, x = -180, y = 58, scale = 17,interpolate = TRUE)
+  draw_image(logo, x = -180, y = 58, scale = 17,interpolate = TRUE))
 
 ################################################ PANEL B
 
@@ -100,7 +100,7 @@ fig1b <- ggplot(dat_long, aes(i, DSP)) +
   geom_segment(aes(xend = i, y = DepartureDSP, yend = ArrivalDSP),
                data = dat) +
   geom_point(aes(fill = phenology), shape = 21) +
-  annotate("text", x = 1, y = 50, label = "B", hjust = 0, vjust = 1) +
+  annotate("text", x = 1, y = 50, label = "B", hjust = 0, vjust = 1, fontface = "bold") +
   scale_fill_manual(values = fig1b_palette) +
   scale_x_continuous("Seals", breaks = 1:max(dat_long$i)) +
   scale_y_continuous("Days Before Parturition",
@@ -120,7 +120,7 @@ fig1c <- ggplot(dat_long, aes(DSP)) +
            label = c("Arrival", "Turnaround", "Departure"),
            color = rev(fig1b_palette),
            hjust = 1) +
-  annotate("text", x = 50, y = 0, label = "C", hjust = -1, vjust = 1) +
+  annotate("text", x = 50, y = 0, label = "C", hjust = -1, vjust = 1, fontface = "bold") +
   scale_x_continuous(limits = c(-250, 50),
                      breaks = seq(-250, 50, by = 50)) +
   scale_y_continuous(limits = c(0, 0.23),
@@ -140,7 +140,7 @@ fig1d <- ggplot(dat, aes(TurnaroundDistanceKM, TurnaroundDSP)) +
               se = FALSE,
               linetype = 2,
               color = "black") +
-  annotate("text", x = 500, y = 40, label = "D", hjust = 0, vjust = 1) +
+  annotate("text", x = 105, y = 40, label = "D", hjust = 0, vjust = 1, fontface = "bold") +
   scale_x_continuous("Turnaround Distance (km)",
                      breaks = seq(0, 5000, by = 1000)) +
   scale_y_continuous("Turnaround Date\n(Days Before Parturition)",
@@ -152,7 +152,7 @@ fig1d <- ggplot(dat, aes(TurnaroundDistanceKM, TurnaroundDSP)) +
 
 fig1e <- ggplot(dat, aes(DriftRateSwitchDOY, TurnaroundDSP)) +
   geom_point(shape = 21, bg = "goldenrod") +
-  annotate("text", x = 240, y = 40, label = "E", hjust = 1, vjust = 1) +
+  annotate("text", x = 231, y = 40, label = "E", hjust = 1, vjust = 1, fontface = "bold") +
   scale_x_continuous("Drift Rate Change Day of Year",
                      breaks = seq(240, 340, by = 20)) +
   scale_y_continuous(limits = c(-250, 50),
