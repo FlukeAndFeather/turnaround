@@ -64,7 +64,7 @@ for(i in length(seals)){
   ##########################PANEL A
 
   #Map with turnaround point
-  PanelA=ggplot()+labs(y= "Latitude (?)", x = "Longitude (?)")+
+  PanelA=ggplot()+labs(y= "Latitude (°)", x = "Longitude (°)")+
     coord_fixed(1.5,xlim=xlim,ylim=ylim)+
     geom_path(TLL_i,mapping=aes(x=Lon,y=Lat),colour="grey40",size=.4)+
     geom_point(dat_i,mapping=aes(x=TurnaroundLon,y=TurnaroundLat),color="black",size=3.3)+
