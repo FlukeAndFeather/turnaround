@@ -99,10 +99,9 @@ for(i in length(seals)){
 
   b6=distancePerBin(div=24,id=tryID,graphit=FALSE,debug=0)
   b6$daysbeforepupping=(b6$yday-365)-dat_i$ParturitionDOY
-  # NOTE: kernelGauss() doesn't take a parameter `par`
   y=kernelGauss(x=b6$daysbeforepupping,
                 y=b6$advance,
-                par=6) #
+                SD=6) #
 
   goingaway=which(y$kernel>=0) #find out which displacement kernels are greater than zero
   pm$turnaround6[i]=b6$daysbeforepupping[max(goingaway)] #find the last positive displacement kernel
@@ -118,6 +117,6 @@ for(i in length(seals)){
 
   #########################COMBINE PANELS
   plot_grid(PanelA,PanelB,PanelC,nrow=3,rel_heights=c(1,1))
-  ggsave(paste0("Turnaround_Supplement_",seals[i],".png"),height=12,width=6)
+  ggsave(file.path("analysis/figures/", paste0("Turnaround_Supplement_",seals[i],".png")),height=12,width=6)
 
 }
