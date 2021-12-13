@@ -1,0 +1,126 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Supplemental methods},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Supplemental methods}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+Animal handling methods, biologger specifications, and calculation of
+arrival and departure dates are described in Robinson, et
+al.~\textsuperscript{1}. Satellite tracking data were filtered and
+processed using the R package crawl\textsuperscript{2,3} to eliminate
+inaccurate location points and interpolate between locations. The
+resulting latitude and longitude estimates were used to calculate great
+circle distance (in kilometers) from the Año Nuevo breeding beach
+(37.1083°N, 122.3366°W) for each time-latitude-longitude point in the
+MATLAB function \texttt{distance()}. Across all seals, foraging trip
+timing (mean ± SD day-of-year) was as follows: departure 157 ± 9,
+turnaround 287 ± 40, and arrival 15 ± 8 (Figure 1C). Therefore, outbound
+trip durations were 130 ± 41 days, and inbound trip durations were 93 ±
+41 days. Turnaround dates were calculated using Gaussian kernels with
+standard deviation 6 hours using custom functions in R. Code and data
+for a subset of animals are available on GitHub (link available upon
+review of manuscript) (NOTE: The GitHub repo will be archived on Zenodo,
+so cite that instead when ready.) Drift rate dates were calculated using
+a custom MATLAB code based on kernel density estimation of fine-scale
+changes in depth over time (drift rate, measured in
+meters/sec).\textsuperscript{4} Dates are presented as day-of-year
+relative to parturition date, with negative numbers indicating dates
+before pupping. All analyses were carried out in R v4.0.2. A linear
+mixed-effects model of turnaround date (relative to pupping date) as a
+function of turnaround distance and buoyancy change date was run in the
+package lme4\textsuperscript{5} after scaling and centering the
+continuous variables and including individual as a random effect.
+
+Figure S1 will go here. There's a bug in
+analysis/data/9SupplementalFigure.R:105.
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-robinson2012}{}%
+1. Robinson, P., Costa, D., Crocker, D., Gallo-Reynoso, J., Champagne,
+C., Fowler, M., Goetsch, C., Goetz, K., Hassrick, J., Hückstädt, L., et
+al. (2012). Foraging behavior and success of a mesopelagic predator in
+the northeast pacific ocean: Insights from a data-rich species, the
+northern elephant seal. PLoS ONE \emph{7}, e36728.
+
+\leavevmode\hypertarget{ref-johnson2008}{}%
+2. Johnson, D., London, J., Lea, M., and Durban, J. (2008).
+Continuous-time correlated random walk model for animal telemetry data.
+Ecology \emph{89}, 1208--1215.
+
+\leavevmode\hypertarget{ref-johnson2016}{}%
+3. Johnson, D., Josh M. London (NOAA), and Kenady (2016). Crawl: V2.0.
+
+\leavevmode\hypertarget{ref-robinson2010}{}%
+4. Robinson, P., Simmons, S., Crocker, D., and Costa, D. (2010).
+Measurements of foraging success in a highly pelagic marine predator,
+the northern elephant seal. Journal of Animal Ecology \emph{79},
+1146--1156.
+
+\leavevmode\hypertarget{ref-bates2015}{}%
+5. Bates, D., Mächler, M., Bolker, B., and Walker, S. (2015). Fitting
+linear mixed-effects models usinglme4. Journal of Statistical Software
+\emph{67}.
+
+\end{document}
