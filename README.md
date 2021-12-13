@@ -5,11 +5,10 @@
 
 This repository contains the data and code for our paper:
 
-> Roxanne Beltran, Alexander Yuen, Richard Condit, Patrick W. Robinson,
-> Max F. Czapanskiy, Daniel E. Crocker, and Daniel P. Costa, (*In
-> preparation for submission to Current Biology*). *Evidence of a map
-> sense: elephant seals account for time and space during long-distance
-> migrations*.
+> Roxanne S. Beltran, Alexander L. Yuen, Richard Condit, Patrick W.
+> Robinson, Max F. Czapanskiy, Daniel E. Crocker, and Daniel P. Costa
+> (*in press*). Evidence of a map sense: elephant seals account for time
+> and space during long-distance migrations. *Current Biology*.
 
 ## Contents
 
@@ -37,12 +36,15 @@ software](https://cloud.r-project.org/) itself and optionally [RStudio
 Desktop](https://rstudio.com/products/rstudio/download/).
 
 You can download the compendium as a zip from from this URL:
-[master.zip](/archive/master.zip). After unzipping: - open the `.Rproj`
-file in RStudio - run `devtools::install()` to ensure you have the
-packages this analysis depends on (also listed in the
-[DESCRIPTION](/DESCRIPTION) file). - finally, open
-`analysis/paper/paper.Rmd` and knit to produce the `paper.docx`, or run
-`rmarkdown::render("analysis/paper/paper.Rmd")` in the R console
+[master.zip](/archive/refs/heads/main.zip). After unzipping:
+
+-   open the `.Rproj` file in RStudio
+-   run `devtools::install()` to ensure you have the packages this
+    analysis depends on (also listed in the [DESCRIPTION](/DESCRIPTION)
+    file).
+-   finally, open `analysis/paper/paper.Rmd` and knit to produce the
+    `paper.docx`, or run `rmarkdown::render("analysis/paper/paper.Rmd")`
+    in the R console
 
 ### Licenses
 

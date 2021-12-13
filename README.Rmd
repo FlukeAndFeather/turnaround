@@ -18,7 +18,7 @@ Title <- "Evidence of a map sense: elephant seals account for time and space dur
 
 This repository contains the data and code for our paper:
 
-> Roxanne Beltran, Alexander Yuen, Richard Condit, Patrick W. Robinson, Max F. Czapanskiy, Daniel E. Crocker, and Daniel P. Costa, (_In preparation for submission to Current Biology_). _`r Title`_.
+> Roxanne S. Beltran, Alexander L. Yuen, Richard Condit, Patrick W. Robinson, Max F. Czapanskiy, Daniel E. Crocker, and Daniel P. Costa (_in press_). `r Title`. _Current Biology_.
 
 ## Contents
 
@@ -44,7 +44,8 @@ installed on your computer the [R software](https://cloud.r-project.org/)
 itself and optionally [RStudio Desktop](https://rstudio.com/products/rstudio/download/).
 
 You can download the compendium as a zip from from this URL:
-[master.zip](/archive/master.zip). After unzipping:
+[master.zip](/archive/refs/heads/main.zip). After unzipping:
+
 - open the `.Rproj` file in RStudio
 - run `devtools::install()` to ensure you have the packages this analysis depends on (also listed in the
 [DESCRIPTION](/DESCRIPTION) file).
