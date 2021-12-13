@@ -3,6 +3,8 @@
 
 # turnaround
 
+[![DOI](https://zenodo.org/badge/424715669.svg)](https://zenodo.org/badge/latestdoi/424715669)
+
 This repository contains the data and code for our paper:
 
 > Roxanne S. Beltran, Alexander L. Yuen, Richard Condit, Patrick W.

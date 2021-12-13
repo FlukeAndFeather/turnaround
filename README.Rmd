@@ -16,6 +16,8 @@ Title <- "Evidence of a map sense: elephant seals account for time and space dur
 
 # turnaround
 
+[![DOI](https://zenodo.org/badge/424715669.svg)](https://zenodo.org/badge/latestdoi/424715669)
+
 This repository contains the data and code for our paper:
 
 > Roxanne S. Beltran, Alexander L. Yuen, Richard Condit, Patrick W. Robinson, Max F. Czapanskiy, Daniel E. Crocker, and Daniel P. Costa (_in press_). `r Title`. _Current Biology_.
