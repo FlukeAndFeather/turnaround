@@ -24,9 +24,9 @@ author:
       institute: [UCSC]
       correspondence: false
 institute:
-  - UCSC: University of California Santa Cruz
-  - HMS: Hopkins Marine Station, Stanford University
-  - SSU: Sonoma State University
+  - UCSC: "University of California Santa Cruz, Department of Ecology and Evolutionary Biology, 1156 High Street, Santa Cruz, CA 95064, USA"
+  - HMS: "Stanford University, Hopkins Marine Station, 120 Ocean View Blvd, Pacific Grove, CA 93950, USA"
+  - SSU: "Sonoma State University, Department of Biology, 1801 East Cotati Ave, Rohnert Park, CA 94928, USA"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
