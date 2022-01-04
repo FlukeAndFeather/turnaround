@@ -1,19 +1,43 @@
 ---
-title: "Supplemental methods"
-output: pdf_document
+title: "Supplemental information for: Evidence of a map sense: elephant seals account for time and space during long-distance migrations"
+author:
+  - Roxanne S. Beltran:
+      email: roxanne@ucsc.edu
+      institute: [UCSC]
+      correspondence: true
+  - Alexander L. Yuen:
+      institute: [UCSC]
+      correspondence: false
+  - Richard Condit:
+      institute: [UCSC]
+      correspondence: false
+  - Patrick W. Robinson:
+      institute: [UCSC]
+      correspondence: false
+  - Max F. Czapanskiy:
+      institute: [HMS]
+      correspondence: false
+  - Daniel E. Crocker:
+      institute: [SSU]
+      correspondence: false
+  - Daniel P. Costa:
+      institute: [UCSC]
+      correspondence: false
+institute:
+  - UCSC: "University of California Santa Cruz, Department of Ecology and Evolutionary Biology, 1156 High Street, Santa Cruz, CA 95064, USA"
+  - HMS: "Stanford University, Hopkins Marine Station, 120 Ocean View Blvd, Pacific Grove, CA 93950, USA"
+  - SSU: "Sonoma State University, Department of Biology, 1801 East Cotati Ave, Rohnert Park, CA 94928, USA"
+output: 
+  bookdown::word_document2:
+      fig_caption: yes
+      reference_docx: "../templates/template.docx" 
+      number_sections: false
+      pandoc_args:
+      - --lua-filter=../templates/scholarly-metadata.lua
+      - --lua-filter=../templates/author-info-blocks.lua
+      - --lua-filter=../templates/pagebreak.lua
 bibliography: "../paper/references.bib"
 csl: "../templates/current-biology.csl" 
-header-includes: 
-  \renewcommand{\thetable}{S\arabic{table}}
-  \renewcommand{\thefigure}{S\arabic{figure}}
-  \usepackage{float}
-  \let\origfigure\figure
-  \let\endorigfigure\endfigure
-  \renewenvironment{figure}[1][2] {
-      \expandafter\origfigure\expandafter[H]
-  } {
-      \endorigfigure
-  }
 ---
 
 Animal handling methods, biologger specifications, and calculation of arrival and departure dates are described in Robinson, et al. [@robinson2012]. Satellite tracking data were filtered and processed using the R package crawl [@johnson2008; @johnson2016] to eliminate inaccurate location points and interpolate between locations. The resulting latitude and longitude estimates were used to calculate great circle distance (in kilometers) from the Año Nuevo breeding beach (37.1083°N, 122.3366°W) for each time-latitude-longitude point in the MATLAB function `distance()`. Across all seals, foraging trip timing (mean ± SD day-of-year) was as follows: departure 157 ± 9, turnaround 287 ± 40, and arrival 15 ± 8 (Figure 1C). Therefore, outbound trip durations were 130 ± 41 days, and inbound trip durations were 93 ± 41 days. Turnaround dates were calculated using Gaussian kernels with standard deviation 6 hours using custom functions in R. Code and data for a subset of animals are available on Zenodo [@turnaround] (https://doi.org/10.5281/zenodo.5777504). Drift rate dates were calculated using a custom MATLAB code based on kernel density estimation of fine-scale changes in depth over time (drift rate, measured in meters/sec) [@robinson2010]. Dates are presented as day-of-year relative to parturition date, with negative numbers indicating dates before pupping. All analyses were carried out in R v4.0.2. A linear mixed-effects model of turnaround date (relative to pupping date) as a function of turnaround distance and buoyancy change date was run in the package lme4 [@bates2015] after scaling and centering the continuous variables and including individual as a random effect.
