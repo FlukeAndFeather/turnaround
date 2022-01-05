@@ -42,7 +42,7 @@ csl: "../templates/current-biology.csl"
 
 ![](../figures/Turnaround_Supplement_2004021.png){height="765"}
 
-**Figure S1:** Tracking data (top), distance traveled from the breeding beach (middle), and daily displacement from the breeding beach (bottom) for a representative seal (\#2007048). Gold points indicate turnaround locations in all panels.
+**Figure S1: Metrics used to identify turnaround locations of migrating northern elephant seals.** Tracking data (top), distance traveled from the breeding beach (middle), and daily displacement from the breeding beach (bottom) for a representative seal (\#2007048). Gold points indicate turnaround locations in all panels.
 
 ```{r comp_env, cache = FALSE, echo = FALSE}
 # which R packages and versions?
